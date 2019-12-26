@@ -19,9 +19,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and test
       run: |
-        npm ci
-        npm run build --if-present
-        npm test
+          yarn install
+          rm -rf build
+          yarn build
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.1.1
       with:
